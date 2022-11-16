@@ -93,11 +93,72 @@ export const Text = styled.p`
     text-align: ${(prop)=> prop.centered ? 'center' : 'start'};
     font-size: ${(prop)=> prop.fontSize || '14px'};
     font-weight: ${(prop)=> prop.fontWeight || '500'};
+    margin:  ${(prop)=> prop.margin || '5px'};
 `
 
 export const Form = styled.form`
     display: grid;
     gap: 20px;
+
+    .cover{
+        width: 100%;
+        height: 20vh;
+        position: relative;
+        z-index: -1;
+
+        .icon{
+            position: absolute;
+            top: 15vh;
+            right: 5%;
+            background-color: rgba(0,0,0,0.3);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 5px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .profilePicture{
+        width: 30vw;
+        height: 30vw;
+        margin-top: -20vw;
+        display: flex;
+        margin: -20vw auto 0;
+        position: relative;
+
+        .icon{
+            position: absolute;
+            top: 12vh;
+            right: 5%;
+            background-color: rgba(0,0,0,0.3);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 5px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            border: 2px solid white;
+        }
+    }
 
     input{
         padding: 12px 16px;
@@ -124,4 +185,87 @@ export const Button = styled.div`
     padding: 12px;
     text-align: center;
     cursor: pointer;
+`
+
+export const ProfileContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        position: relative;
+        /* justify-content: center; */
+
+    .edit{
+        position: absolute;
+        top: 22vh;
+        right: 3%;
+        background-color: black;
+        color: white;
+        font-size: 12px;
+        padding: 7px 10px;
+        cursor: pointer;
+    }
+    img.cover{
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+    }
+
+    img.profilePicture{
+        width: 30vw;
+        height: 30vw;
+        object-fit: cover;
+        border-radius: 50%;
+        padding: 0;
+        margin-top: -15vw;
+        border: 3px solid white;
+    }
+
+    .postReminder{
+        display: flex;
+        width: 80%;
+        align-items: center;
+
+        textarea{
+            padding: 7px 15px;
+            height: 40px;
+            width: 100%;
+            border: 2px solid;
+            border-radius: 36px;
+            font-family: "Lato";
+        }
+    }
+`
+
+export const RemindersContainer = styled.div`
+    .reminder{
+        border: 2px solid;
+        margin: 10px auto 50px;
+        padding: 10px 30px 50px;
+
+        h3{
+            font-size: 30px;
+        }
+
+        h3::first-letter{
+            font-size: 50px;
+        }
+
+        .options{
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 26px;
+            background-color:white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 20px;
+            margin: 20px auto 0;
+        }
+    }
+`
+
+export const InlineFlex = styled.div`
+    display: flex;
+    gap: 10px;
+    padding: 10px;
 `
