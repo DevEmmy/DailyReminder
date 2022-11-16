@@ -9,8 +9,8 @@ const remindersRouter = require("./router/remindersRouter.js")
 const userRouter = require("./router/userRouter.js")
 
 
-const port = process.env.PORT
-const uri = process.env.DB_URI
+const port:number = parseInt(process.env.PORT as string, 10)
+const uri:string = process.env.DB_URI as string
 
 // Databse connection
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
