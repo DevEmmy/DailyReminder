@@ -4,6 +4,11 @@ export const Container = styled.div`
     min-height:100vh;
     padding: 20px;
     background-color: white;
+
+    a {
+        color: inherit;
+        text-decoration: ${(prop) => prop.anchor ?"underline" : "none"};
+    }
 `
 
 export const TopFlex = styled.div`
@@ -14,7 +19,8 @@ export const TopFlex = styled.div`
 
 export const Bordered = styled.div`
     border: 2px solid black;
-    padding: 10px 15px;
+    padding: 8px 10px;
+    font-size: 12px;
     /* border-radius: 6px; */
     cursor: pointer;
     background-color: black;
@@ -27,6 +33,10 @@ export const Logo = styled.div`
     font-weight: 700;
     font-size: 28px;
     color: black;
+
+    a{
+        text-decoration: none;
+    }
 `
 
 export const ReminderContainer = styled.div`
@@ -72,14 +82,17 @@ export const ReminderContainer = styled.div`
         width: fit-content;
         padding: 10px 20px;
         border-radius: 26px;
-        background-color: red;
+        background-color:white;
         box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         display: flex;
-        margin: 10px auto;
+        gap: 20px;
+        margin: 20px auto 0;
     }
 `
 export const Text = styled.p`
-    
+    text-align: ${(prop)=> prop.centered ? 'center' : 'start'};
+    font-size: ${(prop)=> prop.fontSize || '14px'};
+    font-weight: ${(prop)=> prop.fontWeight || '500'};
 `
 
 export const Form = styled.form`
@@ -87,16 +100,28 @@ export const Form = styled.form`
     gap: 20px;
 
     input{
-        padding: 10px 16px;
+        padding: 12px 16px;
         border: 1px solid black;
         width: 100%;
     }
+
+    input:focus{
+        outline: none;
+    }
+`
+export const Vector = styled.img`
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const Button = styled.div`
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     cursor: pointer;
 `

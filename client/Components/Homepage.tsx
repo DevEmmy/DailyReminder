@@ -1,5 +1,7 @@
 import { reminder } from "./dummy"
 import { Bordered, Container, Logo, ReminderContainer, TopFlex } from "./StyledComponent"
+import { RiDownload2Line, RiHeart2Line, RiHeart3Fill, RiHeart3Line, RiShareLine } from "react-icons/ri"
+import Link from "next/link"
 
 
 const Homepage = () => {
@@ -11,7 +13,9 @@ const Homepage = () => {
       </Logo>
 
       <Bordered>
-        Register
+        <Link href="/signup">
+          Register
+        </Link>
       </Bordered>
     </TopFlex>
 
@@ -25,7 +29,9 @@ const Homepage = () => {
       </h3>
 
       <div className="reaction">
-
+        <RiHeart2Line size={25}/>
+        <RiShareLine size={25}/>
+        <RiDownload2Line size={25}/>
       </div>
     </ReminderContainer>
       

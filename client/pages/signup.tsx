@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Button, Container, Form, Logo, Text, Vector } from "../Components/StyledComponent"
-import vector from "../icons/signin.svg"
+import vector from "../icons/signup.svg"
 
 
-const login = () => {
+const signup = () => {
   return (
     <Container anchor>
         <Logo>
@@ -12,25 +12,27 @@ const login = () => {
             </Link>
         </Logo>
 
-        <Vector src={vector.src} />
+        {/* <Vector src={vector.src} /> */}
         
         <Text centered fontSize="26px" fontWeight="600">
-            Sign In
+            Sign up
         </Text>
 
         <Form>
             <input type="email" placeholder="Email"/>
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Last Name" />
             <input type="password" placeholder="Password"/>
             <Button>
-                sign in
+                sign up
             </Button>
         </Form>
 
         <Text centered>
-            I don't have an account yet, <Link href={"/signup"}>Sign up</Link> 
+            I already have an account, <Link href="/login">Sign In</Link>
         </Text>
     </Container>
   )
 }
 
-export default login
+export default signup
