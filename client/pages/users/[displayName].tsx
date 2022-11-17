@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router'
 import React from 'react'
-import { RiDeleteBin2Line, RiDownload2Line, RiEditLine, RiFacebookCircleFill, RiShareLine, RiTwitterFill, RiWhatsappFill } from 'react-icons/ri'
+import { RiDeleteBin2Line, RiDownload2Line, RiEditLine, RiFacebookCircleFill, RiHeart2Fill, RiHeart2Line, RiShareLine, RiTwitterFill, RiWhatsappFill } from 'react-icons/ri'
 import { reminder } from '../../Components/dummy'
+import Return from '../../Components/Return'
 import { Container, InlineFlex, ProfileContainer, RemindersContainer, Text } from '../../Components/StyledComponent'
 
 const User = () => {
@@ -9,6 +10,7 @@ const User = () => {
     const {displayName} = router.query
   return (
     <ProfileContainer>
+        <Return />
         <img src={reminder.postedBy.cover} alt="" className="cover" />
         <img src={reminder.postedBy.profilePicture} alt="" className="profilePicture" />
         <Text>
@@ -51,10 +53,9 @@ const User = () => {
                         <div className="reminder" key={i}>
                             <h3>{reminder.content}</h3>
                             <div className="options">
+                                <RiHeart2Line size={20} />
                                 <RiShareLine size={20}/>
                                 <RiDownload2Line size={20}/>
-                                <RiEditLine size={20}/>
-                                <RiDeleteBin2Line size={20}/>
                                 </div>
                             </div>
                         )

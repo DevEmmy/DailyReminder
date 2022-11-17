@@ -26,6 +26,12 @@ export const Bordered = styled.div`
     background-color: black;
     color: white;
 `
+export const GridForm = styled.div`
+    display: grid;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+`
 
 export const Logo = styled.div`
     padding: 0px;
@@ -164,6 +170,7 @@ export const Form = styled.form`
         padding: 12px 16px;
         border: 1px solid black;
         width: 100%;
+
     }
 
     input:focus{
@@ -194,6 +201,27 @@ export const ProfileContainer = styled.div`
         gap: 0;
         position: relative;
         /* justify-content: center; */
+
+    .toggle{
+        display: flex;
+        gap: 0px;
+        background-color: white;
+        border: 2px solid black;
+        padding: 0px;
+        margin: 10px auto;
+        /* border-radius: 10px; */
+
+        div{
+            padding: 4px 20px;
+            /* border-radius: 8px; */
+        }
+
+        div.active{
+            background-color: black;
+            color: white;
+
+        }
+    }
 
     .edit{
         position: absolute;
@@ -240,7 +268,7 @@ export const ProfileContainer = styled.div`
 export const RemindersContainer = styled.div`
     .reminder{
         border: 2px solid;
-        margin: 10px auto 50px;
+        margin: 0px auto 50px;
         padding: 10px 30px 50px;
 
         h3{
@@ -268,4 +296,17 @@ export const InlineFlex = styled.div`
     display: flex;
     gap: 10px;
     padding: 10px;
+`
+
+export const ReturnContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 3%;
+    top: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    padding: 5px;
+    border-radius: 50%;
 `
