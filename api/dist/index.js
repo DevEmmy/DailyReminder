@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const remindersRouter = require("./router/remindersRouter.js");
 const userRouter = require("./router/userRouter.js");
-const port = process.env.PORT;
+const port = parseInt(process.env.PORT, 10);
 const uri = process.env.DB_URI;
 // Databse connection
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });

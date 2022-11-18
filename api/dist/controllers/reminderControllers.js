@@ -50,6 +50,12 @@ const deleteAReminder = (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(400).json({ message: "An Error Occured", error: err });
     });
 });
+const getMyReminders = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = req.user;
+    yield ReminderModel.find({ postedBy: user })
+        .then((resp) => res.json(resp))
+        .catch((err) => res.json(err));
+});
 const getAReminder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     yield ReminderModel.findById(id).populate("postedBy")
@@ -58,4 +64,4 @@ const getAReminder = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     })
         .catch((err) => res.status(400).json(err));
 });
-module.exports = { getAllReminders, postAReminder, updateAReminder, deleteAReminder, getAReminder };
+module.exports = { getAllReminders, postAReminder, updateAReminder, deleteAReminder, getAReminder, getMyReminders };

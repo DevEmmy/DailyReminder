@@ -310,3 +310,67 @@ export const ReturnContainer = styled.div`
     padding: 5px;
     border-radius: 50%;
 `
+
+export const DeleteContainer = styled.div`
+    display: grid;
+    gap: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+
+    .yes{
+        background-color: #18d218;
+    }
+
+    .no{
+        background-color: red;
+    }
+    div{
+        color: white;
+        padding: 6px 12px;
+        width: 70%;
+        text-align: center;
+    }
+`
+
+export const ShareContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    
+
+    .actions{
+        height: 15vh;
+        padding: 20px 0;
+        background-color: white;
+        position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+
+        font-size: 12px;
+    }
+    }
+    .darkBg{
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(0,0,0,0.3);
+        height: 100vh;
+        width: 100%;
+    }
+`

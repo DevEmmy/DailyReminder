@@ -2,7 +2,7 @@ const {mongoose} = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Reminder = new Schema({
-    postedBy: {type: Schema.Types.ObjectId, required: true},
+    postedBy: {type: Schema.Types.ObjectId, ref:"UserModel"},
     content: {type: String, required: true},
 },{
     timestamp: true

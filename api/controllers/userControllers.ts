@@ -39,10 +39,18 @@ const signUp = async (req:any, res:any)=>{
             const token = jwt.sign({_id: user._id}, jwt_secret)
             res.json({token: token, user:user, message: "Successful"})
         })
-        .catch((err: Error) => res.json({message: "An Error Occured", error: err}))
+        .catch((err: Error) => res.status(400).json({message: "An Error Occured", error: err}))
     })
-    .catch((err: Error) => res.json({message: "An Error Occured", error: err}))
+    .catch((err: Error) => res.status(403).json({message: "An Error Occured", error: err}))
+}
+
+const updateUser = async (req:any, res:any)=>{
+    const update = req.body;
+    const user = req.user;
+    await UserModel.findByIdAndUpdate(user._id, update, {new:true})
+    .then((resp:Response) => {res.json(resp)})
+    .catch((err: Error) => res.status(403).json({message: "An Error Occured", error: err}))
 }
 
 export {}
-module.exports = {signUp, signIn};
+module.exports = {signUp, signIn, updateUser};

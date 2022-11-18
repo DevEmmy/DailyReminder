@@ -47,8 +47,15 @@ const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             const token = jwt.sign({ _id: user._id }, jwt_secret);
             res.json({ token: token, user: user, message: "Successful" });
         })
-            .catch((err) => res.json({ message: "An Error Occured", error: err }));
+            .catch((err) => res.status(400).json({ message: "An Error Occured", error: err }));
     })
-        .catch((err) => res.json({ message: "An Error Occured", error: err }));
+        .catch((err) => res.status(403).json({ message: "An Error Occured", error: err }));
 });
-module.exports = { signUp, signIn };
+const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const update = req.body;
+    const user = req.user;
+    yield UserModel.findByIdAndUpdate(user._id, update, { new: true })
+        .then((resp) => { res.json(resp); })
+        .catch((err) => res.status(403).json({ message: "An Error Occured", error: err }));
+});
+module.exports = { signUp, signIn, updateUser };

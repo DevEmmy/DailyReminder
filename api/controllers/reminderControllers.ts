@@ -44,6 +44,13 @@ const deleteAReminder = async (req:any, res:any)=>{
     })
 }
 
+const getMyReminders = async (req:any, res:any)=>{
+    const user = req.user;
+    await ReminderModel.find({postedBy: user})
+    .then((resp: Response)=> res.json(resp))
+    .catch((err: Error) => res.json(err))
+}
+
 const getAReminder = async (req:any, res:any)=>{
     const {id} = req.params;
     await ReminderModel.findById(id).populate("postedBy")
@@ -53,4 +60,4 @@ const getAReminder = async (req:any, res:any)=>{
     .catch((err: Error)=> res.status(400).json(err))
 }
 export {}
-module.exports = {getAllReminders, postAReminder, updateAReminder, deleteAReminder, getAReminder}
+module.exports = {getAllReminders, postAReminder, updateAReminder, deleteAReminder, getAReminder, getMyReminders}
