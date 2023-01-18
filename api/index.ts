@@ -1,5 +1,6 @@
 import { strict } from "assert";
 
+// Using express 
 const app = require("express")();
 const cors = require("cors")
 const {mongoose} = require("mongoose")
